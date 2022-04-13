@@ -1,3 +1,7 @@
-export function errorResponse(message: string) {
-  return { error_message: message }
+import type { CompatibilityEvent } from 'h3'
+
+export function errorResponse(event: CompatibilityEvent, code: number, message: string) {
+  event.res.statusCode = code
+
+  return { message }
 }
