@@ -17,3 +17,9 @@ Start the development server on http://localhost:3000
 ```bash
 yarn dev
 ```
+
+Copy `.env` file
+
+```bash
+cp .env.example .env
+```

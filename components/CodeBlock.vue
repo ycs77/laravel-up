@@ -5,14 +5,12 @@
       @click="copy()"
     >$ {{ content }}</pre>
 
-    <ClientOnly>
-      <div v-if="isSupported" class="flex items-center px-1">
-        <button class="p-1" @click="copy()">
-          <HeroiconsOutlineDuplicate v-if="!copied" class="text-gray-400 w-6 h-6" />
-          <HeroiconsOutlineCheckCircle v-else class="text-green-500 w-6 h-6" />
-        </button>
-      </div>
-    </ClientOnly>
+    <div class="flex items-center px-1">
+      <button class="p-1" @click="copy()">
+        <HeroiconsOutlineDuplicate v-if="!copied" class="text-gray-400 w-6 h-6" />
+        <HeroiconsOutlineCheckCircle v-else class="text-green-500 w-6 h-6" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -28,7 +26,7 @@ const props = defineProps({
   },
 })
 
-const { copy, copied, isSupported } = useClipboard({
+const { copy, copied } = useClipboard({
   source: props.content,
 })
 </script>

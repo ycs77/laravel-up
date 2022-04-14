@@ -51,6 +51,7 @@
 <script setup lang="ts">
 import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
 import semverMajor from 'semver/functions/major.js'
+import { base_url } from '@/logic/url'
 import tags from '@/data/tags.json'
 
 const latestTag = tags[0]
@@ -67,6 +68,6 @@ function defaultStartTag() {
 const startTag = ref(defaultStartTag())
 const endTag = ref(latestTag)
 
-const code1 = computed(() => `curl -s "http://localhost:3000/up/${startTag.value}...${endTag.value}" | bash`)
-const code2 = computed(() => `curl -s "http://localhost:3000/up/${startTag.value}...${endTag.value}/2" | bash`)
+const code1 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}" | bash`)
+const code2 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/2" | bash`)
 </script>
