@@ -3,9 +3,11 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "update-tags": "tsno run scripts/update-tags.ts"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "semver": "^7.3.7"
   },
   "devDependencies": {
@@ -15,6 +17,7 @@
     "@vueuse/nuxt": "^8.2.6",
     "nuxt-windicss": "^2.2.11",
     "nuxt3": "latest",
+    "tsno": "^2.0.0",
     "unplugin-icons": "^0.14.1",
     "windicss": "^3.5.1"
   }

@@ -1,8 +1,12 @@
 <template>
   <div class="p-6 max-w-screen-md mx-auto">
     <header class="pt-12 text-center sm:pt-24">
-      <h1 class="text-6xl font-black sm:text-7xl"><span class="text-red-500">Laravel</span> Up</h1>
-      <h2 class="mt-4 text-lg text-gray-500 sm:mt-8 sm:text-xl">Upgrade your Laravel application to new version.</h2>
+      <h1 class="text-6xl font-black sm:text-7xl">
+        <span class="text-red-500">Laravel</span> Up
+      </h1>
+      <h2 class="mt-4 text-lg text-gray-500 sm:mt-8 sm:text-xl">
+        Upgrade your Laravel application to new version.
+      </h2>
     </header>
 
     <section class="mt-16 sm:mt-24">
@@ -15,9 +19,7 @@
           class="h-full flex-1 text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="startTag"
         >
-          <option>v8.0.0</option>
-          <option>v8.0.1</option>
-          <option>v8.0.2</option>
+          <option v-for="tag in tags">{{ tag }}</option>
         </select>
 
         <HeroiconsOutlineArrowSmRight class="text-red-500" />
@@ -26,9 +28,7 @@
           class="h-full flex-1 text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="endTag"
         >
-          <option>v9.1.3</option>
-          <option>v9.1.4</option>
-          <option>v9.1.5</option>
+          <option v-for="tag in tags">{{ tag }}</option>
         </select>
       </div>
     </section>
@@ -39,7 +39,7 @@
       </h2>
 
       <div class="mt-4 px-5 py-3 bg-red-100 text-red-600 text-sm font-semibold rounded-md">
-        Please duplicate your application before running script
+        Backup your application before running the script
       </div>
 
       <CodeBlock class="mt-6" :content="code1" />
@@ -50,9 +50,22 @@
 
 <script setup lang="ts">
 import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
+import semverMajor from 'semver/functions/major'
+import tags from '@/data/tags.json'
 
-const startTag = ref('v8.0.0')
-const endTag = ref('v9.1.5')
+const latestTag = tags[0]
+
+function defaultStartTag() {
+  const latestTagMajor = semverMajor(latestTag)
+  const version =
+    tags.includes(`v${latestTagMajor - 1}.0.0`) ? `v${latestTagMajor - 1}.0.0` :
+    tags.includes(`v${latestTagMajor}.0.0`) ? `v${latestTagMajor}.0.0` :
+    latestTag
+  return version
+}
+
+const startTag = ref(defaultStartTag())
+const endTag = ref(latestTag)
 
 const code1 = computed(() => `curl -s "http://localhost:3000/up/${startTag.value}...${endTag.value}" | bash`)
 const code2 = computed(() => `curl -s "http://localhost:3000/up/${startTag.value}...${endTag.value}/2" | bash`)
