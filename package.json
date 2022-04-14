@@ -5,11 +5,11 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
+  "dependencies": {
+    "semver": "^7.3.7"
+  },
   "devDependencies": {
     "@types/semver": "^7.3.9",
     "nuxt3": "latest"
-  },
-  "dependencies": {
-    "semver": "^7.3.7"
   }
 }
