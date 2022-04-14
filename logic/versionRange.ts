@@ -1,7 +1,7 @@
 import { errorResponse } from '@/logic/response'
-import semverValid from 'semver/functions/valid'
-import semverMajor from 'semver/functions/major'
-import semverMinor from 'semver/functions/minor'
+import semverValid from 'semver/functions/valid.js'
+import semverMajor from 'semver/functions/major.js'
+import semverMinor from 'semver/functions/minor.js'
 import type { CompatibilityEvent } from 'h3'
 
 export interface RangeContext {

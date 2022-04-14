@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
-import semverMajor from 'semver/functions/major'
+import semverMajor from 'semver/functions/major.js'
 import tags from '@/data/tags.json'
 
 const latestTag = tags[0]
