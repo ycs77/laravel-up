@@ -9,7 +9,13 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.28",
     "@types/semver": "^7.3.9",
-    "nuxt3": "latest"
+    "@vueuse/core": "^8.2.6",
+    "@vueuse/nuxt": "^8.2.6",
+    "nuxt-windicss": "^2.2.11",
+    "nuxt3": "latest",
+    "unplugin-icons": "^0.14.1",
+    "windicss": "^3.5.1"
   }
 }

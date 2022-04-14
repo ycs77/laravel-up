@@ -25,7 +25,7 @@ NC='\\033[0m'
 echo ''
 echo -e "\${GREEN}*** Manually resolve merge conflicts ***\${NC}"
 echo ''
-echo 'Once resolved run:'
+echo 'Once resolved conflicts run command to commit upgrade changes:'
 echo ''
 echo '  curl -s "${urlFromRequest(event)}/2" | bash'`
   )

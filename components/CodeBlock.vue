@@ -1,0 +1,34 @@
+<template>
+  <div class="mt-8 flex border border-red-500 rounded-md">
+    <pre
+      class="flex-1 px-5 py-3 overflow-x-auto cursor-pointer"
+      @click="copy()"
+    >$ {{ content }}</pre>
+
+    <ClientOnly>
+      <div v-if="isSupported" class="flex items-center px-1">
+        <button class="p-1" @click="copy()">
+          <HeroiconsOutlineDuplicate v-if="!copied" class="text-gray-400 w-6 h-6" />
+          <HeroiconsOutlineCheckCircle v-else class="text-green-500 w-6 h-6" />
+        </button>
+      </div>
+    </ClientOnly>
+  </div>
+</template>
+
+<script setup>
+import { useClipboard } from '@vueuse/core'
+import HeroiconsOutlineDuplicate from '~icons/heroicons-outline/duplicate'
+import HeroiconsOutlineCheckCircle from '~icons/heroicons-outline/check-circle'
+
+const props = defineProps({
+  content: {
+    type: String,
+    required: true,
+  },
+})
+
+const { copy, copied, isSupported } = useClipboard({
+  source: props.content,
+})
+</script>
