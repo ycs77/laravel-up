@@ -1,29 +1,19 @@
-# Nuxt 3 Minimal Starter
+# Laravel Up
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+Upgrade your Laravel application to new version.
 
-## Setup
+[🚀 **Start Upgrade**](https://laravelup.vercel.app/)
+
+## Development
 
 Make sure to install the dependencies
 
 ```bash
-yarn install
+yarn
 ```
-
-## Development
 
 Start the development server on http://localhost:3000
 
 ```bash
 yarn dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-yarn build
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
