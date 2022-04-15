@@ -2,7 +2,7 @@
 
 Upgrade your Laravel application to new version.
 
-[🚀 **Start Upgrade**](https://laravelup.vercel.app/)
+[🚀 **Start Upgrade**](https://laravel-up.vercel.app/)
 
 ## Development
 
