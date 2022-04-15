@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 max-w-screen-md mx-auto">
+  <div class="px-4 py-8 max-w-screen-md mx-auto">
     <header class="pt-12 text-center sm:pt-24">
       <h1 class="text-6xl font-black sm:text-7xl">
         <span class="text-red-500">Laravel</span> Up
@@ -16,7 +16,7 @@
 
       <div class="mt-4 flex items-center h-40px mx-auto space-x-4 sm:w-400px">
         <select
-          class="h-full flex-1 text-gray-600 border-b border-gray-500 focus:outline-none"
+          class="h-full flex-1 bg-transparent text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="startTag"
         >
           <option v-for="tag in tags">{{ tag }}</option>
@@ -25,7 +25,7 @@
         <HeroiconsOutlineArrowSmRight class="text-red-500" />
 
         <select
-          class="h-full flex-1 text-gray-600 border-b border-gray-500 focus:outline-none"
+          class="h-full flex-1 bg-transparent text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="endTag"
         >
           <option v-for="tag in tags">{{ tag }}</option>
@@ -45,16 +45,31 @@
       <CodeBlock class="mt-6" :content="code1" />
       <CodeBlock class="mt-6" :content="code2" />
     </section>
+
+    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4" target="_blank" rel="noopener noreferrer">
+      <CarbonLogoGithub class="w-8 h-8 text-gray-500" />
+    </a>
+
+    <footer class="mt-12 text-gray-300 text-center">
+      built by <a href="https://github.com/ycs77" class="text-gray-400" target="_blank" rel="noopener noreferrer">@ycs77</a>, powered by <a href="https://v3.nuxtjs.org/" class="text-gray-400" target="_blank" rel="noopener noreferrer">Nuxt 3</a>
+    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
 import semverMajor from 'semver/functions/major.js'
+import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
+import CarbonLogoGithub from '~icons/carbon/logo-github'
 import { base_url } from '@/logic/url'
 import tags from '@/data/tags.json'
 
+useHead({
+  title: 'Laravel Up',
+})
+
 const latestTag = tags[0]
+const startTag = ref(defaultStartTag())
+const endTag = ref(latestTag)
 
 function defaultStartTag() {
   const latestTagMajor = semverMajor(latestTag)
@@ -64,9 +79,6 @@ function defaultStartTag() {
     latestTag
   return version
 }
-
-const startTag = ref(defaultStartTag())
-const endTag = ref(latestTag)
 
 const code1 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}" | bash`)
 const code2 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/2" | bash`)
