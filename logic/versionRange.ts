@@ -1,7 +1,8 @@
 import { errorResponse } from '@/logic/response'
-import semverValid from 'semver/functions/valid.js'
+import semverLt from 'semver/functions/lt.js'
 import semverMajor from 'semver/functions/major.js'
 import semverMinor from 'semver/functions/minor.js'
+import semverValid from 'semver/functions/valid.js'
 import type { CompatibilityEvent } from 'h3'
 
 export interface RangeContext {
@@ -16,22 +17,23 @@ export function versionToBranch(version: string): string {
 }
 
 export function response(event: CompatibilityEvent, content: (range: RangeContext) => string) {
+  event.res.setHeader('Content-Type', 'text/plain; charset=UTF-8')
+
   const range = event.context.params.range.split('...') as string[]
-
   if (range.length !== 2) {
-    return errorResponse(event, 400, 'Range is incorrect.')
+    return errorResponse('Range is incorrect.')
   }
-
   const [startTag, endTag] = range
 
   if (!semverValid(startTag)) {
-    return errorResponse(event, 400, 'startTag is invalid.')
+    return errorResponse('startTag is invalid.')
   }
   if (!semverValid(endTag)) {
-    return errorResponse(event, 400, 'endTag is invalid.')
+    return errorResponse('endTag is invalid.')
   }
-
-  event.res.setHeader('Content-Type', 'text/plain; charset=UTF-8')
+  if (!semverLt(startTag, endTag)) {
+    return errorResponse('startTag must be less than endTag.')
+  }
 
   return content({ startTag, endTag })
 }
