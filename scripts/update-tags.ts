@@ -2,10 +2,21 @@ import fs from 'fs'
 import axios from 'axios'
 import semverLte from 'semver/functions/lte.js'
 
-const { data } = await axios.get('https://api.github.com/repos/laravel/laravel/git/refs/tags')
+interface GitTag {
+  ref: string
+  node_id: string
+  url: string
+  object: {
+    sha: string
+    type: string
+    url: string
+  }
+}
+
+const { data } = await axios.get<GitTag[]>('https://api.github.com/repos/laravel/laravel/git/refs/tags')
 
 const tags = data
-  .map(tag => tag.ref.replace('refs/tags/', ''))
+  .map(tagObj => tagObj.ref.replace('refs/tags/', ''))
   .filter(tag => semverLte('v5.0.0', tag))
   .reverse()
 
