@@ -4,7 +4,6 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "start": "npm run preview",
     "update-tags": "tsno run scripts/update-tags.ts"
   },
   "dependencies": {
