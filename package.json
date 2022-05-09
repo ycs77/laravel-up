@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "node .output/server/index.mjs",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "start": "npm run preview",
     "update-tags": "tsno run scripts/update-tags.ts"
   },
   "dependencies": {
@@ -16,7 +17,7 @@
     "@vueuse/core": "^8.2.6",
     "@vueuse/nuxt": "^8.2.6",
     "nuxt-windicss": "^2.2.11",
-    "nuxt3": "latest",
+    "nuxt": "3.0.0-rc.1",
     "tsno": "^2.0.0",
     "unplugin-icons": "^0.14.1",
     "windicss": "^3.5.1"
