@@ -1,6 +1,6 @@
 # Laravel Up
 
-Upgrade your Laravel application to new version.
+Upgrade Laravel application from Laravel source git repository.
 
 [🚀 **Start Upgrade**](https://laravel-up.vercel.app/)
 
