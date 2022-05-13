@@ -1,6 +1,6 @@
 # Laravel Up
 
-Upgrade Laravel application from Laravel source git repository.
+Upgrade your Laravel application from Laravel source git repository.
 
 [🚀 **Start Upgrade**](https://laravel-up.vercel.app/)
 
