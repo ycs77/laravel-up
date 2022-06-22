@@ -21,8 +21,8 @@ jobs:
       - run: yarn update-tags
 
       - name: Commit tags
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit -am "Auto-update tags" || :
-          git push
+        uses: EndBug/add-and-commit@v4
+        with:
+          message: "Auto-update tags"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
