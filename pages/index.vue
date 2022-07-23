@@ -46,7 +46,7 @@
       <CodeBlock class="mt-6" :content="code2" />
     </section>
 
-    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4 sm:top-6 sm:right-6" target="_blank" rel="noopener noreferrer">
       <CarbonLogoGithub class="w-8 h-8 text-gray-500" />
     </a>
 
