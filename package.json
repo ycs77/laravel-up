@@ -1,10 +1,11 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "update-tags": "tsno run scripts/update-tags.ts"
+    "update-tags": "tsx scripts/update-tags.ts"
   },
   "dependencies": {
     "axios": "^0.26.1",
@@ -15,9 +16,9 @@
     "@types/semver": "^7.3.9",
     "@vueuse/core": "^8.2.6",
     "@vueuse/nuxt": "^8.2.6",
-    "nuxt-windicss": "^2.2.11",
     "nuxt": "3.0.0-rc.1",
-    "tsno": "^2.0.0",
+    "nuxt-windicss": "^2.2.11",
+    "tsx": "^3.8.0",
     "unplugin-icons": "^0.14.1",
     "windicss": "^3.5.1"
   }
