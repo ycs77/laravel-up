@@ -3,7 +3,7 @@ import { urlFromRequest } from '@/logic/url'
 
 export default defineEventHandler(event => {
   return response(event, ({ startTag, endTag }) =>
-`# Make Laravel commits...
+`# Pull Laravel commits...
 git remote add laravel https://github.com/laravel/laravel.git
 git fetch laravel
 git checkout ${startTag}
