@@ -14,5 +14,5 @@ try {
 export const base_url = base_url_temp
 
 export function urlFromRequest(event: CompatibilityEvent) {
-  return `${new URL(event.req.url, `${(event.req.connection as { encrypted?: boolean }).encrypted ? 'https' : 'http'}://${event.req.headers.host}`)}`
+  return new URL(event.req.url, base_url).toString()
 }
