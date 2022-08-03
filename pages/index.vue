@@ -1,11 +1,11 @@
 <template>
   <div class="px-4 py-8 max-w-screen-md mx-auto">
     <header class="pt-12 text-center sm:pt-24">
-      <h1 class="text-6xl font-black sm:text-7xl">
+      <h1 class="text-6xl font-black sm:text-7xl ">
         <span class="text-red-500">Laravel</span> Up
       </h1>
-      <h2 class="mt-4 text-lg text-gray-500 sm:mt-8 sm:text-xl">
-        Upgrade your Laravel application to new version.
+      <h2 class="mt-4 text-gray-400 sm:mt-8 sm:text-lg md:text-xl">
+        Upgrade your Laravel application from Laravel source git repository.
       </h2>
     </header>
 
