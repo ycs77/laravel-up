@@ -17,14 +17,10 @@ jobs:
           cache: 'yarn'
 
       - run: yarn
-
       - run: yarn build
-
       - run: yarn update-tags
 
       - name: Commit tags
-        uses: EndBug/add-and-commit@v4
+        uses: EndBug/add-and-commit@v9
         with:
-          message: "Auto-update tags"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: 'Auto-update tags'
