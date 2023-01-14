@@ -7,19 +7,20 @@
     "preview": "nuxt preview",
     "update-tags": "tsx scripts/update-tags.ts"
   },
-  "dependencies": {
-    "axios": "^0.26.1",
-    "semver": "^7.3.7"
-  },
   "devDependencies": {
     "@iconify/json": "^2.1.28",
+    "@types/node": "^18.11.18",
     "@types/semver": "^7.3.9",
-    "@vueuse/core": "^8.2.6",
-    "@vueuse/nuxt": "^8.2.6",
-    "nuxt": "3.0.0-rc.1",
-    "nuxt-windicss": "^2.2.11",
+    "@vueuse/core": "^9.10.0",
+    "@vueuse/nuxt": "^9.10.0",
+    "axios": "^1.2.0",
+    "h3": "^1.0.2",
+    "nuxt": "^3.0.0",
+    "nuxt-windicss": "^2.6.0",
+    "semver": "^7.3.7",
     "tsx": "^3.8.0",
-    "unplugin-icons": "^0.14.1",
+    "unplugin-icons": "^0.15.1",
     "windicss": "^3.5.1"
-  }
+  },
+  "dependencies": {}
 }

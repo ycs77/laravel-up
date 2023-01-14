@@ -1,7 +1,5 @@
-import { defineNuxtConfig } from 'nuxt'
-import defaultTheme from 'windicss/defaultTheme'
+import theme from 'windicss/defaultTheme'
 
-// https://nuxt.com/docs/getting-started/configuration
 export default defineNuxtConfig({
   app: {
     head: {
@@ -15,14 +13,14 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-windicss',
     '@vueuse/nuxt',
-    ['unplugin-icons/nuxt', { /* options */ }],
+    ['unplugin-icons/nuxt', {}],
   ],
   windicss: {
     config: {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', defaultTheme.fontFamily.sans],
+            sans: ['Inter', theme.fontFamily.sans],
           },
         },
       },

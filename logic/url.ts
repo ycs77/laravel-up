@@ -1,4 +1,4 @@
-import type { CompatibilityEvent } from 'h3'
+import type { H3Event } from 'h3'
 
 let base_url_temp = ''
 try {
@@ -13,6 +13,6 @@ try {
 } catch (e) {}
 export const base_url = base_url_temp
 
-export function urlFromRequest(event: CompatibilityEvent) {
-  return new URL(event.req.url, base_url).toString()
+export function urlFromRequest(event: H3Event) {
+  return new URL(event.node.req.url!, base_url).toString()
 }
