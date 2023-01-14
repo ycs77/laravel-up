@@ -1,12 +1,17 @@
 import { defineNuxtConfig } from 'nuxt'
 import defaultTheme from 'windicss/defaultTheme'
 
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// https://nuxt.com/docs/getting-started/configuration
 export default defineNuxtConfig({
-  css: [
-    '@/assets/base.css',
-    '@/assets/font.css',
-  ],
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.bunny.net' },
+        { rel: 'stylesheet', href: 'https://fonts.bunny.net/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap' },
+      ],
+    },
+  },
+  css: ['@/assets/base.css'],
   modules: [
     'nuxt-windicss',
     '@vueuse/nuxt',
