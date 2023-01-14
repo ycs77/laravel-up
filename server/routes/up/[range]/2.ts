@@ -1,16 +1,22 @@
-import { response, versionToBranch } from '@/logic/versionRange'
+import { response } from '@/logic/versionRange'
+import { urlFromRequest } from '@/logic/url'
 
 export default defineEventHandler(event => {
-  return response(event, ({ startTag, endTag }) =>
-`# Commit upgrade change...
-git commit -m "Upgrade Laravel ${versionToBranch(startTag)} to ${versionToBranch(endTag)}"
+  return response(event, () =>
+`# Insert Laravel commits...
+git commit -m "patch"
+git checkout $(git config --global init.defaultBranch)
+git cherry-pick $(git log --pretty=format:"%h" laravel-upgrading-with-bash^..laravel-upgrading-with-bash)
 
-# Clear...
-git branch -D laravel-upgrading-with-bash
-git tag -d $(git tag -l)
-git remote remove laravel
-git fsck --unreachable
-git gc --prune=now
-git fsck`
+GREEN='\\033[0;36m'
+WHITE='\\033[1;37m'
+NC='\\033[0m'
+
+echo ''
+echo -e "\${GREEN}*** Manually resolve merge conflicts ***\${NC}"
+echo ''
+echo 'Once resolved conflicts run command to commit upgrade changes:'
+echo ''
+echo '  curl -s "${urlFromRequest(event)}/3" | bash'`
   )
 })

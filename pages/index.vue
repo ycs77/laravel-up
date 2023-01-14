@@ -44,6 +44,7 @@
 
       <CodeBlock class="mt-6" :content="code1" />
       <CodeBlock class="mt-6" :content="code2" />
+      <CodeBlock class="mt-6" :content="code3" />
     </section>
 
     <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4 sm:top-6 sm:right-6" target="_blank" rel="noopener noreferrer">
@@ -82,4 +83,5 @@ function defaultStartTag() {
 
 const code1 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}" | bash`)
 const code2 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/2" | bash`)
+const code3 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/3" | bash`)
 </script>
