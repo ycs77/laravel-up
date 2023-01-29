@@ -64,7 +64,7 @@ import CarbonLogoGithub from '~icons/carbon/logo-github'
 import { base_url } from '@/logic/url'
 import tags from '@/data/tags.json'
 
-useHead({
+useServerSeoMeta({
   title: 'Laravel Up',
 })
 
