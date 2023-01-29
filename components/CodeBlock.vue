@@ -14,17 +14,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
 import HeroiconsOutlineDuplicate from '~icons/heroicons-outline/duplicate'
 import HeroiconsOutlineCheckCircle from '~icons/heroicons-outline/check-circle'
 
-const props = defineProps({
-  content: {
-    type: String,
-    required: true,
-  },
-})
+const props = defineProps<{
+  content: string
+}>()
 
 const { copy, copied } = useClipboard()
 
