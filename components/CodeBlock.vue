@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 flex border border-red-500 rounded-md">
+  <div class="flex border border-red-500 rounded-md">
     <pre
       class="flex-1 px-5 py-3 overflow-x-auto cursor-pointer"
       @click="copyCode"

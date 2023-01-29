@@ -52,7 +52,7 @@
     </a>
 
     <footer class="mt-12 text-gray-300 text-center">
-      built by <a href="https://github.com/ycs77" class="text-gray-400" target="_blank" rel="noopener noreferrer">@ycs77</a>, powered by <a href="https://v3.nuxtjs.org/" class="text-gray-400" target="_blank" rel="noopener noreferrer">Nuxt 3</a>
+      built by <a href="https://github.com/ycs77" class="text-gray-400" target="_blank" rel="noopener noreferrer">@ycs77</a>, powered by <a href="https://nuxt.com/" class="text-gray-400" target="_blank" rel="noopener noreferrer">Nuxt</a>
     </footer>
   </div>
 </template>
