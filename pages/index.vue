@@ -63,6 +63,7 @@ import CarbonLogoGithub from '~icons/carbon/logo-github'
 
 useServerSeoMeta({
   title: 'Laravel Up',
+  description: 'Upgrade your Laravel application from Laravel source git repository.',
 })
 
 const { data } = await useFetch('/api/tags')
