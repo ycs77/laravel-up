@@ -1,8 +1,5 @@
-import { response } from '@/logic/versionRange'
-import { urlFromRequest } from '@/logic/url'
-
 export default defineEventHandler(event => {
-  return response(event, ({ startTag, endTag }) =>
+  return versionResponse(event, ({ startTag, endTag }) =>
 `# Pull Laravel commits...
 git remote add laravel https://github.com/laravel/laravel.git
 git fetch laravel

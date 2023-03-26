@@ -3,7 +3,6 @@ import semverLt from 'semver/functions/lt.js'
 import semverMajor from 'semver/functions/major.js'
 import semverMinor from 'semver/functions/minor.js'
 import semverValid from 'semver/functions/valid.js'
-import { errorResponse } from '@/logic/response'
 
 export interface RangeContext {
   startTag: string
@@ -16,7 +15,7 @@ export function versionToBranch(version: string): string {
   return `${major}.${minor}`
 }
 
-export function response(event: H3Event, content: (range: RangeContext) => string) {
+export function versionResponse(event: H3Event, content: (range: RangeContext) => string) {
   event.node.res.setHeader('Content-Type', 'text/plain; charset=UTF-8')
 
   const range = event.context.params?.range.split('...') as string[]

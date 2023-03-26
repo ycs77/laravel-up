@@ -1,8 +1,5 @@
-import { response } from '@/logic/versionRange'
-import { urlFromRequest } from '@/logic/url'
-
 export default defineEventHandler(event => {
-  return response(event, () =>
+  return versionResponse(event, () =>
 `# Insert Laravel commits...
 git commit -m "patch"
 git checkout $(git config --global init.defaultBranch)

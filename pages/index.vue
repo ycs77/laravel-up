@@ -61,7 +61,6 @@
 import semverMajor from 'semver/functions/major.js'
 import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
 import CarbonLogoGithub from '~icons/carbon/logo-github'
-import { base_url } from '@/logic/url'
 import tags from '@/data/tags.json'
 
 useServerSeoMeta({

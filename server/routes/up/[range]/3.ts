@@ -1,7 +1,5 @@
-import { response, versionToBranch } from '@/logic/versionRange'
-
 export default defineEventHandler(event => {
-  return response(event, ({ startTag, endTag }) =>
+  return versionResponse(event, ({ startTag, endTag }) =>
 `# Commit upgrade change...
 git commit -m "Upgrade Laravel ${versionToBranch(startTag)} to ${versionToBranch(endTag)}"
 

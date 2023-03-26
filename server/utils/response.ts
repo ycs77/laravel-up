@@ -3,5 +3,5 @@ export function errorResponse(message: string) {
 NC='\\033[0m'
 
 echo ''
-echo -e "\${RED}error\${NC} ${message}"`
+echo -e "\${RED}error:\${NC} ${message}"`
 }
