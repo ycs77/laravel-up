@@ -7,9 +7,15 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en-US',
       },
+      link: [
+        { rel: 'preload', href: '/fonts/inter-v12-latin-regular.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/inter-v12-latin-500.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/inter-v12-latin-600.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/inter-v12-latin-900.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+      ],
     },
   },
-  css: ['@/assets/base.css'],
+  css: ['@/assets/styles/index.css'],
   modules: [
     '@vueuse/nuxt',
     'unplugin-icons/nuxt',
@@ -18,13 +24,9 @@ export default defineNuxtConfig({
   unocss: {
     uno: true,
     preflight: true,
-    webFonts: {
-      provider: 'bunny',
-      fonts: {
-        sans: {
-          name: 'Inter',
-          weights: ['400', '500', '600', '900'],
-        },
+    theme: {
+      fontFamily: {
+        sans: 'Inter',
       },
     },
     transformers: [
