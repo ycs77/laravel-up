@@ -4,7 +4,7 @@
       <h1 class="text-6xl font-black sm:text-7xl ">
         <span class="text-red-500">Laravel</span> Up
       </h1>
-      <h2 class="mt-4 text-gray-400 sm:mt-8 sm:text-lg md:text-xl">
+      <h2 class="mt-4 text-gray-500 sm:mt-8 sm:text-lg md:text-xl">
         Upgrade your Laravel application from Laravel source git repository.
       </h2>
     </header>
@@ -38,7 +38,7 @@
         Run upgrade script...
       </h2>
 
-      <div class="mt-4 px-5 py-3 bg-red-100 text-red-600 text-sm font-semibold rounded-md">
+      <div class="mt-4 px-5 py-3 bg-red-100 text-red-700 text-sm font-semibold border border-red-400 rounded-md">
         Backup your application before running the script
       </div>
 
@@ -47,12 +47,12 @@
       <CodeBlock class="mt-6" :content="code3" />
     </section>
 
-    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4 sm:top-6 sm:right-6" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4 sm:top-6 sm:right-6" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository link">
       <CarbonLogoGithub class="w-8 h-8 text-gray-500" />
     </a>
 
-    <footer class="mt-12 text-gray-300 text-center">
-      built by <a href="https://github.com/ycs77" class="text-gray-400" target="_blank" rel="noopener noreferrer">@ycs77</a>, powered by <a href="https://nuxt.com/" class="text-gray-400" target="_blank" rel="noopener noreferrer">Nuxt</a>
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      built by <a href="https://github.com/ycs77" class="text-red-600 font-medium" target="_blank" rel="noopener noreferrer">@ycs77</a>, powered by <a href="https://nuxt.com/" class="text-red-600 font-medium" target="_blank" rel="noopener noreferrer">Nuxt</a>
     </footer>
   </div>
 </template>

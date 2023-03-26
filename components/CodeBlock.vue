@@ -6,7 +6,7 @@
     >$ {{ content }}</pre>
 
     <div class="flex items-center px-1">
-      <button class="p-1" @click="copyCode">
+      <button class="p-1" @click="copyCode" aria-label="Copy code">
         <HeroiconsOutlineDuplicate v-if="!copied" class="text-gray-400 w-6 h-6" />
         <HeroiconsOutlineCheckCircle v-else class="text-green-500 w-6 h-6" />
       </button>

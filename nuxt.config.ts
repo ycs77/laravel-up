@@ -2,6 +2,13 @@ import { defineNuxtConfig } from 'nuxt/config'
 import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en-US',
+      },
+    },
+  },
   css: ['@/assets/base.css'],
   modules: [
     '@vueuse/nuxt',
