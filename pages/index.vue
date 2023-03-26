@@ -58,27 +58,18 @@
 </template>
 
 <script setup lang="ts">
-import semverMajor from 'semver/functions/major.js'
 import HeroiconsOutlineArrowSmRight from '~icons/heroicons-outline/arrow-sm-right'
 import CarbonLogoGithub from '~icons/carbon/logo-github'
-import tags from '@/data/tags.json'
 
 useServerSeoMeta({
   title: 'Laravel Up',
 })
 
-const latestTag = tags[0]
-const startTag = ref(defaultStartTag())
-const endTag = ref(latestTag)
+const { data } = await useFetch('/api/tags')
+const { tags, startTag: defaultStartTag, endTag: defaultEndTag } = data.value!
 
-function defaultStartTag() {
-  const latestTagMajor = semverMajor(latestTag)
-  const version =
-    tags.includes(`v${latestTagMajor - 1}.0.0`) ? `v${latestTagMajor - 1}.0.0` :
-    tags.includes(`v${latestTagMajor}.0.0`) ? `v${latestTagMajor}.0.0` :
-    latestTag
-  return version
-}
+const startTag = ref(defaultStartTag)
+const endTag = ref(defaultEndTag)
 
 const code1 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}" | bash`)
 const code2 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/2" | bash`)
