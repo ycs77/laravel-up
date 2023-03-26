@@ -15,7 +15,7 @@
     "@unocss/nuxt": "^0.49.1",
     "@vueuse/nuxt": "^9.10.0",
     "axios": "^1.2.0",
-    "nuxt": "^3.1.0",
+    "nuxt": "^3.3.2",
     "semver": "^7.3.7",
     "tsx": "^3.8.0",
     "unplugin-icons": "^0.15.1"
