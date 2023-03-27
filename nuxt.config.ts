@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import { theme } from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineNuxtConfig({
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
     preflight: true,
     theme: {
       fontFamily: {
-        sans: 'Inter',
+        sans: ['Inter', theme.fontFamily?.sans],
       },
     },
     transformers: [
