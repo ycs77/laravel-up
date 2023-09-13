@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt/config'
 import { theme } from '@unocss/preset-wind'
 import transformerDirectives from '@unocss/transformer-directives'
 
@@ -22,6 +21,9 @@ export default defineNuxtConfig({
     'unplugin-icons/nuxt',
     '@unocss/nuxt',
   ],
+  devtools: {
+    enabled: true,
+  },
   unocss: {
     uno: true,
     preflight: true,
