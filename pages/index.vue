@@ -66,13 +66,15 @@ useServerSeoMeta({
   description: 'Upgrade your Laravel application from Laravel source git repository.',
 })
 
+const config = useRuntimeConfig()
+
 const { data } = await useFetch('/api/tags')
 const { tags, startTag: defaultStartTag, endTag: defaultEndTag } = data.value!
 
 const startTag = ref(defaultStartTag)
 const endTag = ref(defaultEndTag)
 
-const code1 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}" | bash`)
-const code2 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/2" | bash`)
-const code3 = computed(() => `curl -s "${base_url}/up/${startTag.value}...${endTag.value}/3" | bash`)
+const code1 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}" | bash`)
+const code2 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}/2" | bash`)
+const code3 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}/3" | bash`)
 </script>
