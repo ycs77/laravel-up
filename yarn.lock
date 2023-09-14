@@ -1852,7 +1852,7 @@
     gzip-size "^6.0.0"
     sirv "^2.0.3"
 
-"@unocss/nuxt@^0.55.0":
+"@unocss/nuxt@^0.55.7":
   version "0.55.7"
   resolved "https://registry.yarnpkg.com/@unocss/nuxt/-/nuxt-0.55.7.tgz#32b2ca5fb5b026ab16d8db0fe3e0fd886ee0ca53"
   integrity sha512-XcaKKmtmGuErhpTFChjTO8MXBN4hPH11yELFn27XiyAEqyu2CR8YhHC6DQwt2vm5PQdkvCOYLgHWGPQsb0m/Aw==
