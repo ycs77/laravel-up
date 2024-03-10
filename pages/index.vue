@@ -39,7 +39,7 @@
       </h2>
 
       <div class="mt-4 px-5 py-3 bg-red-100 text-red-700 text-sm font-semibold border border-red-400 rounded-md">
-        Backup your application before running the script
+        <strong>Notice:</strong> Please backup your application code before running the script!
       </div>
 
       <CodeBlock class="mt-6" :content="code1" />
