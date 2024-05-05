@@ -3,9 +3,11 @@ export default defineEventHandler(event => {
 `${colorCodes()}
 
 echo ''
-echo -e "  \${RED}Laravel Up\${NC}"
+echo ''
+echo -e "                               \${RED}Laravel Up\${NC}"
 echo ''
 echo -e "  \${GRAY}Upgrade your Laravel application from Laravel source git repository.\${NC}"
+echo ''
 echo ''
 echo -e "\${RED}[This operation is destructive, please proceed with caution]\${NC}"
 echo 'Please backup your git repository before executing this script'
