@@ -33,7 +33,7 @@ git checkout ${startTag}
 git checkout -b laravel-upgrading-with-bash
 git merge --squash -Xtheirs --no-commit ${endTag}
 git restore --staged README.md CHANGELOG.md .styleci.yml .github/*
-git checkout -- README.md CHANGELOG.md .styleci.yml
+git checkout -- README.md CHANGELOG.md .styleci.yml .github/*
 git clean -df
 
 echo ''
