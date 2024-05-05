@@ -1,7 +1,7 @@
 export default defineEventHandler(event => {
-  return versionResponse(event, () =>
+  return versionResponse(event, ({ startTag, endTag }) =>
 `# Insert Laravel commits...
-git commit -m "patch"
+git commit -m "Upgrade Laravel ${versionToBranch(startTag)} to ${versionToBranch(endTag)}"
 git checkout $(git config --global init.defaultBranch)
 git cherry-pick $(git log --pretty=format:"%h" laravel-upgrading-with-bash^..laravel-upgrading-with-bash)
 
