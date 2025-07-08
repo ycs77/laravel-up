@@ -16,9 +16,9 @@ export function versionToBranch(version: string): string {
 }
 
 export function versionResponse(event: H3Event, content: (range: RangeContext) => string) {
-  event.node.res.setHeader('Content-Type', 'text/plain; charset=UTF-8')
+  setResponseHeader(event, 'Content-Type', 'text/plain; charset=UTF-8')
 
-  const range = event.context.params?.range.split('...') as string[]
+  const range = (getRouterParam(event, 'range') || '').split('...')
   if (range.length !== 2) {
     return errorResponse('Range is incorrect.')
   }

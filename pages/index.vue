@@ -4,6 +4,7 @@
       <h1 class="text-6xl font-black sm:text-7xl">
         <span class="text-red-500">Laravel</span> Up
       </h1>
+
       <h2 class="mt-4 text-gray-500 sm:mt-8 sm:text-lg md:text-xl">
         Upgrade your Laravel application from Laravel source git repository.
       </h2>
@@ -14,8 +15,10 @@
         Select version...
       </h2>
 
-      <div class="mt-4 flex items-center h-40px mx-auto space-x-4 sm:w-400px">
+      <div class="mt-4 flex items-center h-10 mx-auto space-x-4 sm:w-[400px]">
         <select
+          id="startTag"
+          name="startTag"
           class="h-full flex-1 bg-transparent text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="startTag"
         >
@@ -25,6 +28,8 @@
         <HeroiconsOutlineArrowSmRight class="text-red-500" />
 
         <select
+          id="endTag"
+          name="endTag"
           class="h-full flex-1 bg-transparent text-gray-600 border-b border-gray-500 focus:outline-none"
           v-model="endTag"
         >
@@ -47,7 +52,13 @@
       <CodeBlock class="mt-6" :content="code3" />
     </section>
 
-    <a href="https://github.com/ycs77/laravel-up" class="block absolute top-4 right-4 sm:top-6 sm:right-6" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository link">
+    <a
+      href="https://github.com/ycs77/laravel-up"
+      class="block absolute top-4 right-4 sm:top-6 sm:right-6"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub repository link"
+    >
       <CarbonLogoGithub class="w-8 h-8 text-gray-500" />
     </a>
 
@@ -66,15 +77,14 @@ useServerSeoMeta({
   description: 'Upgrade your Laravel application from Laravel source git repository.',
 })
 
-const config = useRuntimeConfig()
+const url = useRequestURL()
 
-const { data } = await useFetch('/api/tags')
-const { tags, startTag: defaultStartTag, endTag: defaultEndTag } = data.value!
+const { tags, startTag: defaultStartTag, endTag: defaultEndTag } = await $fetch('/api/tags')
 
 const startTag = ref(defaultStartTag)
 const endTag = ref(defaultEndTag)
 
-const code1 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}" | bash`)
-const code2 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}/2" | bash`)
-const code3 = computed(() => `curl -s "${config.public.baseUrl}/up/${startTag.value}...${endTag.value}/3" | bash`)
+const code1 = computed(() => `curl -s "${url.origin}/up/${startTag.value}...${endTag.value}" | bash`)
+const code2 = computed(() => `curl -s "${url.origin}/up/${startTag.value}...${endTag.value}/2" | bash`)
+const code3 = computed(() => `curl -s "${url.origin}/up/${startTag.value}...${endTag.value}/3" | bash`)
 </script>

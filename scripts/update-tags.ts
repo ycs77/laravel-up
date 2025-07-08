@@ -1,5 +1,5 @@
 import fs from 'fs'
-import axios from 'axios'
+import { ofetch } from 'ofetch'
 import semverLte from 'semver/functions/lte.js'
 
 interface GitTag {
@@ -13,9 +13,11 @@ interface GitTag {
   }
 }
 
-const { data } = await axios.get<GitTag[]>('https://api.github.com/repos/laravel/laravel/git/refs/tags')
+const tagsData = await ofetch<GitTag[]>('https://api.github.com/repos/laravel/laravel/git/refs/tags', {
+  responseType: 'json',
+})
 
-const tags = data
+const tags = tagsData
   .map(tagObj => tagObj.ref.replace('refs/tags/', ''))
   .filter(tag => semverLte('v5.0.0', tag))
   .reverse()

@@ -1,6 +1,7 @@
-import { theme } from '@unocss/preset-wind'
+import { theme } from '@unocss/preset-wind3'
 import transformerDirectives from '@unocss/transformer-directives'
 
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
@@ -15,20 +16,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  runtimeConfig: {
-    public: {
-      baseUrl: process.env.BASE_URL ?? 'http://localhost:3000',
-    },
-  },
   css: ['@/styles/index.css'],
   modules: [
     '@vueuse/nuxt',
     'unplugin-icons/nuxt',
     '@unocss/nuxt',
   ],
-  devtools: {
-    enabled: true,
-  },
   unocss: {
     uno: true,
     preflight: true,
@@ -40,5 +33,9 @@ export default defineNuxtConfig({
     transformers: [
       transformerDirectives(),
     ],
+  },
+  compatibilityDate: '2025-05-15',
+  devtools: {
+    enabled: true,
   },
 })

@@ -12,6 +12,6 @@ echo -e "\${GREEN}*** Manually resolve merge conflicts ***\${NC}"
 echo ''
 echo 'Once resolved conflicts run command to commit upgrade changes:'
 echo ''
-echo '  curl -s "${urlFromRequest(event)}/3" | bash'`
+echo '  curl -s "${getRequestURL(event).href.replace(/\/\d$/, '')}/3" | bash'`
   )
 })

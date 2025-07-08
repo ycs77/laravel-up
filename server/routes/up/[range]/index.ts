@@ -42,6 +42,6 @@ echo -e "\${GREEN}*** Confirm upgrade changes ***\${NC}"
 echo ''
 echo 'Once confirmed complete run command to commit upgrade changes:'
 echo ''
-echo '  curl -s "${urlFromRequest(event)}/2" | bash'`
+echo '  curl -s "${getRequestURL(event).href.replace(/\/\d$/, '')}/2" | bash'`
   )
 })
