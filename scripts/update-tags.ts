@@ -20,6 +20,6 @@ const tagsData = await ofetch<GitTag[]>('https://api.github.com/repos/laravel/la
 const tags = tagsData
   .map(tagObj => tagObj.ref.replace('refs/tags/', ''))
   .filter(tag => semverLte('v5.0.0', tag))
-  .reverse()
+  .sort((a, b) => semverLte(a, b) ? 1 : -1)
 
 fs.writeFileSync('data/tags.json', JSON.stringify(tags), { encoding: 'utf-8' })
