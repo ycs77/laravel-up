@@ -22,7 +22,7 @@ export function versionResponse(event: H3Event, content: (range: RangeContext) =
   if (range.length !== 2) {
     return errorResponse('Range is incorrect.')
   }
-  const [startTag, endTag] = range
+  const [startTag, endTag] = range as [string, string]
 
   if (!semverValid(startTag)) {
     return errorResponse('startTag is invalid.')

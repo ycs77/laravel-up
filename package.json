@@ -12,19 +12,21 @@
   },
   "dependencies": {
     "semver": "^7.7.2",
-    "vue": "^3.5.14",
+    "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.2.10",
+    "@iconify-json/carbon": "^1.2.13",
     "@iconify-json/heroicons-outline": "^1.2.1",
-    "@types/node": "^22.0.0",
-    "@types/semver": "^7.7.0",
-    "@unocss/nuxt": "^66.3.3",
-    "@vueuse/nuxt": "^13.5.0",
-    "nuxt": "^3.17.4",
+    "@types/node": "^22.18.7",
+    "@types/semver": "^7.7.1",
+    "@unocss/nuxt": "^66.5.2",
+    "@vueuse/nuxt": "^13.9.0",
+    "nuxt": "^4.1.2",
     "ofetch": "^1.4.1",
-    "tsx": "^4.20.3",
-    "unplugin-icons": "^22.1.0"
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "unplugin-icons": "^22.3.0",
+    "vue-tsc": "^3.1.0"
   }
 }

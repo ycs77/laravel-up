@@ -1,8 +1,8 @@
 import semverMajor from 'semver/functions/major.js'
-import tags from '@/data/tags.json'
+import tags from '~~/data/tags.json'
 
 export default defineEventHandler(() => {
-  const latestTag = tags[0]
+  const latestTag = tags[0]!
 
   function defaultStartTag() {
     const latestTagMajor = semverMajor(latestTag)
