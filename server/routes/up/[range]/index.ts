@@ -4,9 +4,14 @@ export default defineEventHandler(event => {
 
 echo ''
 echo ''
-echo -e "                               \${RED}Laravel Up\${NC}"
+echo -e "    \${RED} _                              _ \${NC}  _   _       "
+echo -e "    \${RED}| |    __ _ _ __ __ ___   _____| |\${NC} | | | |_ __  "
+echo -e "    \${RED}| |   / _\\\` | '__/ _\\\` \\ \\ / / _ \\ |\${NC} | | | | '_ \\ "
+echo -e "    \${RED}| |__| (_| | | | (_| |\\ V /  __/ |\${NC} | |_| | |_) |"
+echo -e "    \${RED}|_____\\__,_|_|  \\__,_| \\_/ \\___|_|\${NC}  \\___/| .__/ "
+echo -e "                                             |_|    "
 echo ''
-echo -e "  \${GRAY}Upgrade your Laravel application from Laravel source git repository.\${NC}"
+echo -e "\${GRAY}Upgrade your Laravel application from Laravel source git repository.\${NC}"
 echo ''
 echo ''
 echo -e "\${RED}[This operation is destructive, please proceed with caution]\${NC}"
