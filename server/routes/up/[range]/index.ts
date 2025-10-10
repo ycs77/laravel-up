@@ -15,8 +15,9 @@ echo -e "\${GRAY}Upgrade your Laravel application from Laravel source git reposi
 echo ''
 echo ''
 echo -e "\${RED}[This operation is destructive, please proceed with caution]\${NC}"
-echo 'Please backup your git repository before executing this script'
-echo 'and clone the new repository to executing this script.'
+echo 'Before running the upgrade commands, please clone your Laravel project '
+echo 'to a new directory to avoid affecting your original project.'
+echo 'Run the following commands in the new project directory!'
 echo ''
 
 printf 'Is your git repository now ready to execute (y/N)? '

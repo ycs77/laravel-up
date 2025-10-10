@@ -44,7 +44,7 @@
       </h2>
 
       <div class="mt-4 px-5 py-3 bg-red-100 text-red-700 text-sm font-semibold border border-red-400 rounded-md">
-        <strong>Notice:</strong> Please backup your application code before running the script!
+        <strong>Notice:</strong> Before running the upgrade commands, please clone your Laravel project to a new directory to avoid affecting your original project. Run the following commands in the new project directory!
       </div>
 
       <CodeBlock class="mt-6" :content="code1" />
